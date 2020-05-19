@@ -23,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker rm -f java_lodge'
-                sh 'docker run -dit --name jenkins-docker -p 9010:9010 jenkins-docker:v1.0.1'
+                sh 'docker run -dit --name jenkins-docker -p 9011:9011 jenkins-docker:v1.0.1'
                 println "Deploy_test1"
             }
         }
