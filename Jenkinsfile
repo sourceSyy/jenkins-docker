@@ -17,7 +17,7 @@ pipeline {
            steps {
               println "packaging ....."
               sh 'mvn package -Dmaven.test.skip=true'
-              sh 'docker rmi -f jenkins-docker'
+              sh 'docker rmi -f jenkins-docker:v1.0.1'
               sh 'sudo docker build -t jenkins-docker:v1.0.1 .'
               println "packaging .....  done"
 
