@@ -14,7 +14,7 @@ COPY ./target/jenkins-docker-0.0.1-SNAPSHOT.jar /opt/works/jenkins-docker.jar
 ENV UNIT=jenkins-docker
 ENV PORT=9011
 ENV PROFILE=default
-ENV MEMORY=1G
+ENV MEMORY=250M
 
 # prepare services
 EXPOSE ${PORT}
