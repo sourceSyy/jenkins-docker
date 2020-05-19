@@ -4,13 +4,13 @@ pipeline {
         stage('Build') {
             steps {
                 println "Build"
-                sh 'mvn clean'
+                //sh 'mvn clean'
             }
         }
         stage('Test') {
             steps {
                 println "Test1"
-                sh 'mvn test'
+                //sh 'mvn test'
             }
         }
         stage('Package') {
@@ -18,7 +18,7 @@ pipeline {
               println "packaging ....."
               sh 'mvn package -Dmaven.test.skip=true'
               sh 'sudo docker build -t jenkins-docker:v1.0.1 .'
-              println "Deploy_test1"
+              //println "Deploy_test1"
            }
         }
         /* stage('Deploy') {
