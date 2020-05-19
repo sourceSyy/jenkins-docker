@@ -21,13 +21,13 @@ pipeline {
               //println "Deploy_test1"
            }
         }
-        /* stage('Deploy') {
-            steps {
-                sh 'docker rm -f jenkins-docker'
-                sh 'docker rmi -f jenkins-docker'
-                sh 'docker run -dit --name jenkins-docker -p 9011:9011 jenkins-docker:v1.0.1'
-                println "Deploy_test1"
-            }
-        } */
+        stage('Deploy') {
+           steps {
+               //sh 'docker rm -f jenkins-docker'
+               //sh 'docker rmi -f jenkins-docker'
+               sh 'docker run -dit --name jenkins-docker -p 9011:9011 jenkins-docker:v1.0.1'
+               println "Deploy_test1"
+           }
+       }
     }
 }
