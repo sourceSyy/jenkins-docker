@@ -3,21 +3,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                println "Build"
-                 script {
-                    def pom = readMavenPom file: 'pom.xml'
-                    POM_VERSION = pom.version
-                    PROJECT_NAME = pom.artifactId
-                    if (env.BRANCH_NAME == 'deploy') {
-                        DOCKER_TAG = 'prod'
-                    }
-                    if (env.BRANCH_NAME == 'review') {
-                        DOCKER_TAG = 'beta'
-                    }
-                    if (env.BRANCH_NAME == 'master') {
-                        DOCKER_TAG = 'test'
-                    }
-                 }
                  echo 'Building ' + PROJECT_NAME + '/' + POM_VERSION + ' ...'
                  sh 'mvn compile'
                 //sh 'mvn clean'
