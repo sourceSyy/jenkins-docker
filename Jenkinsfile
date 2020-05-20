@@ -26,8 +26,8 @@ pipeline {
         }
         stage('Deploy') {
            steps {
-               //sh 'docker stop  jenkins-docker'
-               //sh 'docker rm -f jenkins-docker'
+               sh 'docker stop  jenkins-docker'
+               sh 'docker rm -f jenkins-docker'
                sh 'docker run -dit --name jenkins-docker -p 9011:9011 jenkins-docker:v1.0.1'
                println "Deploy ..... done"
            }
