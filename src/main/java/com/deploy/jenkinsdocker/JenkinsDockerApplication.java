@@ -18,4 +18,9 @@ public class JenkinsDockerApplication {
 		return "hello Deploy with jenkins and docker";
 	}
 
+	@GetMapping("/hello")
+	public String hello(String name){
+		return "hello" + name;
+	}
+
 }
