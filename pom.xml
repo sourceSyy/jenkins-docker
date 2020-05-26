@@ -17,10 +17,23 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<jenkins-docker-common>0.0.1-SNAPSHOT</jenkins-docker-common>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.deploy</groupId>
+				<artifactId>jenkins-docker-common</artifactId>
+				<version>${jenkins-docker-common}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<modules>
 		<module>server</module>
+		<module>client</module>
+		<module>common</module>
 	</modules>
 
 </project>

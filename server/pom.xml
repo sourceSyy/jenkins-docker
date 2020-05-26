@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.deploy</groupId>
-    <artifactId>server</artifactId>
+    <artifactId>jenkins-docker-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
@@ -44,6 +44,10 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.deploy</groupId>
+            <artifactId>jenkins-docker-common</artifactId>
         </dependency>
     </dependencies>
 
