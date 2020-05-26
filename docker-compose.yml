@@ -1,0 +1,22 @@
+version: '3'
+
+networks:
+  networks
+
+services:
+  jenkins-docker:
+    image: jenkins-docker:v1.0.1
+    command: "--mysql-address=localhost"
+
+  jenkins-docker2:
+    image: jenkins-docker2:v1.0.1
+    command: "--mysql-address=localhost"
+    links:
+      - jenkins-docker
+  api-gateway-zuul:
+    image: api
+
+
+
+
+

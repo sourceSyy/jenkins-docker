@@ -1,7 +1,7 @@
 package com.deploy.jenkinsdocker;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
+
+import java.util.function.*;
 
 /**
  * 函数式编程案例一
@@ -28,6 +28,8 @@ public class Java8LambdaExcemple1 {
          *  3、 对象方法的引用 ： 类名::newMethod
          *  4、 构造方法的引用 ： 类名::new
          */
+
+        // 静态方法的引用 ： 类名::staticMethod
         //最原始写法
         Function<String,Integer> fun1 = (String string) -> {return string.length();};
         //优化一
@@ -48,25 +50,56 @@ public class Java8LambdaExcemple1 {
         //--- 调用输出 ---
         System.out.println(fun7.apply("java", "Python"));
 
-        //自定义函数式接口
-        User user1 = new User();
-        user1.setId("123456");
-        UserMapper userMapper = user -> {
-            System.out.println("insert "+user);
-            return true;
-        };
-        boolean insert = userMapper.insert(user1);
-        System.out.println(insert);
+
+        // 对象方法的引用   &&   构造方法的引用
+        Function<Too, String> fun8 = (too) -> {return new Too().echo();};
+        Function<Too, String> fun9 = too -> {return new Too().echo();};
+        Function<Too, String> fun10 = Too::echo;
+
+        //对象方法的引用
+        Consumer<Too> c1 = Too::echo;
+        Consumer<Too> c2 = Too::show;
+
+        UnaryOperator<Too> u1 = (too) -> too;
+        UnaryOperator<Too> u2 = too -> too;
+
+        //构造方法的引用
+        Supplier<Too> s1 = Too::new;
+        Function<String, Too> fu11 = (String too) -> {return new Too();};
+        //有参数的构造
+        Function<String, Too> fu12 = Too::new;
+
     }
 }
 
-//自定义的函数式接口
-@FunctionalInterface
-interface UserMapper{
 
-    boolean insert(User user);
+//提供使用的接口
+class Too{
+
+    public Too() {
+    }
+
+    public Too(String name){
+
+    }
+
+    public String echo(){
+        return "echo";
+    }
+
+    public void show(){}
 
 }
+
+class UserDTO{
+    private User user;
+
+    public UserDTO(User user) {
+        this.user = user;
+    }
+}
+
+
 class User{
     private String id;
 
