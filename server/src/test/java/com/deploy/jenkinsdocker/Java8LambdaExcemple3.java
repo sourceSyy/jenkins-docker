@@ -18,7 +18,6 @@ import java.util.stream.Stream;
  */
 public class Java8LambdaExcemple3 {
 
-
     /**
      * Java8 经典实战案例整理
      */
@@ -59,24 +58,18 @@ public class Java8LambdaExcemple3 {
         collect4.keySet().forEach(System.out::println);
 
         // 经典实战案例八
+        Optional<Book> collect5 = books().stream().min(Comparator.comparingDouble(Book::getPrice));
+        System.out.println(collect5);
 
         // 经典实战案例九
+        Optional<Book> collect6 = books().stream().max(Comparator.comparingDouble(Book::getPrice));
+        System.out.println(collect6);
 
         // 经典实战案例十
+        Optional<Book> collect7 = books().stream().max(Comparator.comparingDouble(Book::getPrice).thenComparing(Comparator.comparing(Book::getPublishData)));
+        System.out.println(collect7);
 
-        // 经典实战案例十一
-
-        // 经典实战案例十二
-
-        // 经典实战案例十三
-
-        // 经典实战案例十四
-
-        // 经典实战案例十五
-
-
-
-
+        // 经典实战案例  .......  还有很多 有待大家新增  ........
     }
 
 
