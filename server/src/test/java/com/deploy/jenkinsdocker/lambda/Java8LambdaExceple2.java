@@ -1,4 +1,4 @@
-package com.deploy.jenkinsdocker;
+package com.deploy.jenkinsdocker.lambda;
 
 import java.util.*;
 import java.util.stream.Collectors;

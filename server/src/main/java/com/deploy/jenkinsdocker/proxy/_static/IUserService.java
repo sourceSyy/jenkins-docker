@@ -1,6 +1,4 @@
-package com.deploy.jenkinsdocker;
-
-import javax.sound.midi.Track;
+package com.deploy.jenkinsdocker.proxy._static;
 
 /**
  * 　　* @Description:
@@ -11,10 +9,8 @@ import javax.sound.midi.Track;
  * 　　* @date $ $
  *
  */
-public class Test {
+public interface IUserService {
 
-    public static void main(String[] args) {
-
-    }
+    void save(User user);
 
 }

@@ -1,4 +1,4 @@
-package com.deploy.jenkinsdocker;
+package com.deploy.jenkinsdocker.lambda;
 
 
 import java.util.function.*;
@@ -92,9 +92,9 @@ class Too{
 }
 
 class UserDTO{
-    private User user;
+    private com.deploy.jenkinsdocker.proxy._static.User user;
 
-    public UserDTO(User user) {
+    public UserDTO(com.deploy.jenkinsdocker.proxy._static.User user) {
         this.user = user;
     }
 }

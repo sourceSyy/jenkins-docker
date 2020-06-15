@@ -1,4 +1,4 @@
-package com.deploy.jenkinsdocker;
+package com.deploy.jenkinsdocker.lambda;
 
 import java.util.Optional;
 import java.util.stream.Stream;
